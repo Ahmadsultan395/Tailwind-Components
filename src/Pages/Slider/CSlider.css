@@ -1,0 +1,47 @@
+.slider-container {
+  max-width: 80%;
+  margin: auto;
+  position: relative;
+}
+
+.slick-slide {
+  transition: transform 0.3s ease-in-out;
+}
+
+.slick-center {
+  transform: scale(1.1); /* Optional: Slightly scale the center slide */
+}
+
+.prev-slide {
+  transform: rotate(25deg); /* Rotate side images left */
+}
+
+.next-slide {
+  transform: rotate(-45deg); /* Rotate side images right */
+}
+
+/* Ensure rotation only applies to the side images, not the center */
+.slick-slide.slick-center + .slick-slide.prev-slide,
+.slick-slide.slick-center + .slick-slide.next-slide,
+.slick-slide.slick-center ~ .slick-slide.prev-slide,
+.slick-slide.slick-center ~ .slick-slide.next-slide {
+  transform: rotate(-30deg) !important;
+}
+
+/* Ensure central image stays at 0 degrees rotation */
+.slick-center .slider-item {
+  transform: rotate(0deg);
+}
+
+.slider-item {
+  position: relative;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Example background effect */
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-image {
+  width: 100%;
+  border-radius: 10px;
+}
